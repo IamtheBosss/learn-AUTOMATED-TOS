@@ -1,13 +1,19 @@
 package com.timeoff.pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class WelcomePage {
     WebDriver driver;
 
+    @FindBy(linkText = "Login")
+    WebElement loginLink;
+
     public WelcomePage(WebDriver driver) {
         this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
 
     public void open() {
@@ -15,6 +21,6 @@ public class WelcomePage {
     }
 
     public void clickLoginLink() {
-        driver.findElement(By.linkText("Login")).click();
+        loginLink.click();
     }
 }

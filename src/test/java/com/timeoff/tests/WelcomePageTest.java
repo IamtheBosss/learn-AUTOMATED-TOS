@@ -13,11 +13,12 @@ public class WelcomePageTest extends BaseTest {
 
     @Test
     public void testClickLoginLink() {
+        log.info("Start testClickLoginLink");
         WelcomePage welcomePage = new WelcomePage(driver);
         welcomePage.open();
-        test.info("Opened Welcome Page");
+        test.info("Opened welcome page");
 
         welcomePage.clickLoginLink();
-        test.info("Clicked Login Link");
+        test.info("Clicked login link");
     }
 }
